@@ -1,10 +1,21 @@
-import anyio
-import asyncclick as click
+# flask_admin_cli/cli.py
+"""CLI Application
+
+Available Commands:
+    - list-original-examples: To get a list of the original examples provided by Flask-Admin  
+    - list-examples: To get a list of available apps for your project.  
+    - new_app: creates an app  
+
+Examples:
+    >>> flask-admin list-examples
+    >>> flask-admin list-original-examples
+"""
+import click
 from flask_admin_cli import api
 
 
 @click.group()
-async def the_cli():
+def the_cli():
     pass
 
 
@@ -57,23 +68,14 @@ def list_examples():
     ),
     show_default=True,
 )
-async def new_app(app, dest_dir):
+def new_app(app, dest_dir):
     """Flask-Admin app as a Flask app"""
-    await api.clone_repo(app, dest_dir)
-
-
-@click.command()
-@click.option("--name", default="app-factory", help="Application Name.")
-@click.option("--dest_dir", prompt="Directory", help="Directory to install.")
-async def new_extension(name, dest_dir):
-    """Flask-Admin app as a Flask extension"""
-    await api.clone_repo(name, dest_dir)
+    api.clone_repo(app, dest_dir)
 
 
 the_cli.add_command(new_app)
-# the_cli.add_command(new_extension)
 the_cli.add_command(list_original_examples)
 the_cli.add_command(list_examples)
 
 if __name__ == "__main__":
-    the_cli(_anyio_backend="asyncio")  # or asyncio
+    the_cli()

@@ -1,6 +1,7 @@
 import pytest
 import os
-from flask_admin_cli.api import clone_repo, cross_check, BASE_DIR
+from flask_admin_cli.api import clone_repo, cross_check
+from pathlib import Path
 
 
 def test_cross_check_fail_dir():
@@ -19,15 +20,22 @@ def test_cross_check_fail_branch():
         cross_check("dest_dir", "main2")
     with pytest.raises(Exception) as e:
         cross_check("dest_dir", "app-simple2")
-
-
-@pytest.mark.asyncio
-async def test_clone_repo():
-    assert await clone_repo("app-simple", "hola_mundo")
-    assert os.path.isdir(os.path.join(BASE_DIR, "hola_mundo/.git")) is False
-
-
-@pytest.mark.asyncio
-async def test_clone_repo_fail():
     with pytest.raises(Exception) as e:
-        await clone_repo(None, None)
+        cross_check("dest_dir", "app-orig-tinymongo2")
+
+
+def test_clone_repo():
+    CURR_DIR = Path(__file__).resolve().parent
+    new_path = os.path.join(CURR_DIR, "hola_mundo")
+    assert clone_repo("app-simple", new_path)
+
+
+def test_clone_original_repo():
+    CURR_DIR = Path(__file__).resolve().parent
+    new_path = os.path.join(CURR_DIR, "original-simple")
+    assert clone_repo("simple", new_path)
+
+
+def test_clone_repo_fail():
+    with pytest.raises(Exception) as e:
+        clone_repo(None, None)

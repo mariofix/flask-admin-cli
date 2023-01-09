@@ -2,7 +2,7 @@
 """
 Main API
 
-This file has the main functions
+This file has the main functions to check and clone remote git repos.
 
 """
 from pathlib import Path
@@ -49,7 +49,7 @@ def cross_check(dest_dir: str, branch: str) -> None:
     Raises:
         InvalidParamsException: some of the parameters are invalid
         FileExistsError: the `dest_dir` directory already exists
-        InvalidBranchException
+        InvalidBranchException: the `branch` cannot be cloned.
     """
 
     if not dest_dir or not branch:
@@ -79,7 +79,21 @@ def cross_check(dest_dir: str, branch: str) -> None:
         )
 
 
-async def clone_repo(branch: str = None, dest_dir: str = None) -> True:
+def clone_repo(branch: str = None, dest_dir: str = None) -> True:
+    """Clone the selected repo
+
+    Args:
+        branch (str): remote branch to clone.
+        dest_dir (str): directory name inside the project.
+
+    Raises:
+        InvalidParamsException: some of the parameters are invalid
+        FileExistsError: the `dest_dir` directory already exists
+        InvalidBranchException: the `branch` cannot be cloned.
+
+    Returns:
+        True
+    """
     if branch in ORIGINAL_EXAMPLES:
         branch = f"app-orig-{branch}"
 
