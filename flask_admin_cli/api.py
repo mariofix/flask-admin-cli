@@ -10,10 +10,32 @@ from flask_admin_cli import exceptions
 import os
 import subprocess
 
-MAIN_REPO = "https://github.com/mariofix/flask-admin-cli.git"
+MAIN_REPO = "https://github.com/mariofix/flask-admin-cli"
+FLASK_ADMIN_REPO = "https://github.com/flask-admin/flask-admin"
 BRANCHES_NOT_ALLOWED = ["main", "gh-pages"]
 BRANCH_PREFIX = "app"
-BASE_DIR = Path(__file__).resolve().parent.parent
+ORIGINAL_EXAMPLES = [
+    "appengine",
+    "auth",
+    "auth-flask-login",
+    "auth-mongoengine",
+    "babel",
+    "bootstrap4",
+    "custom-layout",
+    "forms-files-images",
+    "geo_alchemy",
+    "methodview",
+    "mongoengine",
+    "multiple-admin-instances",
+    "peewee",
+    "pymongo",
+    "simple",
+    "sqla",
+    "sqla-association_proxy",
+    "sqla-custom-inline-forms",
+    "tinymongo",
+]
+AVAILABLE_EXAMPLES = ["app-factory", "app-flask-extension"]
 
 
 def cross_check(dest_dir: str, branch: str) -> None:
@@ -33,10 +55,8 @@ def cross_check(dest_dir: str, branch: str) -> None:
     if not dest_dir or not branch:
         raise exceptions.InvalidParamsException(f"{dest_dir} or {branch} are None.")
     # new directory
-    new_dir = os.path.join(BASE_DIR, dest_dir)
-
-    if os.path.isdir(new_dir):
-        raise FileExistsError(f"The directory {new_dir} already exists.")
+    if os.path.isdir(dest_dir):
+        raise FileExistsError(f"The directory {dest_dir} already exists.")
 
     # branch allowed
     if branch in BRANCHES_NOT_ALLOWED:
@@ -48,7 +68,7 @@ def cross_check(dest_dir: str, branch: str) -> None:
         )
     # branch exists
     status = subprocess.run(
-        ["git", "ls-remote", "--exit-code", "--heads", MAIN_REPO, branch],
+        ["git", "ls-remote", "--exit-code", "--heads", f"{MAIN_REPO}.git", branch],
         check=True,
         capture_output=False,
         stdout=subprocess.DEVNULL,
@@ -60,18 +80,18 @@ def cross_check(dest_dir: str, branch: str) -> None:
 
 
 async def clone_repo(branch: str = None, dest_dir: str = None) -> True:
+    if branch in ORIGINAL_EXAMPLES:
+        branch = f"app-orig-{branch}"
+
     try:
         cross_check(dest_dir, branch)
     except Exception as e:
         raise exceptions.NotReadyException(e)
     else:
-        new_dir = os.path.join(BASE_DIR, dest_dir)
-        print(
-            "subprocess.run(git clone {} -b {} {})".format(MAIN_REPO, branch, new_dir)
-        )
-        clone = subprocess.run(
-            ["git", "clone", MAIN_REPO, "-b", branch, new_dir],
-            check=True,
-        )
-        subprocess.run(["rm", "-rf", f"{new_dir}/.git"])
+        print(f"git clone {MAIN_REPO}.git -b {branch} {dest_dir}")
+        # clone = subprocess.run(
+        #     ["git", "clone", f"{MAIN_REPO}.git", "-b", branch, new_dir],
+        #     check=True,
+        # )
+        # subprocess.run(["rm", "-rf", f"{new_dir}/.git"])
         return True
