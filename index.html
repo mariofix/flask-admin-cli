@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.3">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.f56500e0.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.6b71719e.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.2505c338.min.css">
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#flask-admin-cli" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome to MkDocs
+              flask admin cli
             
           </span>
         </div>
@@ -191,12 +191,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Welcome to MkDocs
+          flask admin cli
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="." class="md-nav__link md-nav__link--active">
-        Welcome to MkDocs
+        flask admin cli
       </a>
       
         
@@ -215,15 +215,78 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+  <a href="#installation" class="md-nav__link">
+    Installation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask_admin_cli.api" class="md-nav__link">
+    flask_admin_cli.api
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask_admin_cli.api.clone_repo" class="md-nav__link">
+    clone_repo()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask_admin_cli.api.cross_check" class="md-nav__link">
+    cross_check()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    CLI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask_admin_cli.cli" class="md-nav__link">
+    flask_admin_cli.cli
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask_admin_cli.cli.list_examples" class="md-nav__link">
+    list_examples()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask_admin_cli.cli.list_original_examples" class="md-nav__link">
+    list_original_examples()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask_admin_cli.cli.new_app" class="md-nav__link">
+    new_app()
   </a>
   
 </li>
@@ -263,15 +326,78 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+  <a href="#installation" class="md-nav__link">
+    Installation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask_admin_cli.api" class="md-nav__link">
+    flask_admin_cli.api
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask_admin_cli.api.clone_repo" class="md-nav__link">
+    clone_repo()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask_admin_cli.api.cross_check" class="md-nav__link">
+    cross_check()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    CLI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask_admin_cli.cli" class="md-nav__link">
+    flask_admin_cli.cli
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask_admin_cli.cli.list_examples" class="md-nav__link">
+    list_examples()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask_admin_cli.cli.list_original_examples" class="md-nav__link">
+    list_original_examples()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flask_admin_cli.cli.new_app" class="md-nav__link">
+    new_app()
   </a>
   
 </li>
@@ -292,21 +418,578 @@
 
 
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Permanent link">&para;</a></h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+<h1 id="flask-admin-cli">flask admin cli<a class="headerlink" href="#flask-admin-cli" title="Permanent link">&para;</a></h1>
+<p>A CLI application to create Flask Admin instances.  </p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>flask-admin-cli
 </code></pre></div>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>To get a list of examples you can run, and follow the instructions
+<div class="highlight"><pre><span></span><code>flask-admin<span class="w"> </span>list-examples
+</code></pre></div></p>
+<p>To get a list of the original examples you can run, and follow the instructions
+<div class="highlight"><pre><span></span><code>flask-admin<span class="w"> </span>list-original-examples
+</code></pre></div></p>
+<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+<a id="flask_admin_cli.api"></a>
+  <div class="doc doc-contents first">
+  
+      <p>Main API</p>
+<p>This file has the main functions to check and clone remote git repos.</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="flask_admin_cli.api.clone_repo" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">clone_repo</span><span class="p">(</span><span class="n">branch</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dest_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#flask_admin_cli.api.clone_repo" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Clone the selected repo</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>branch</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>remote branch to clone.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>dest_dir</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>directory name inside the project.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>InvalidParamsException</code>
+          </td>
+          <td><p>some of the parameters are invalid</p></td>
+        </tr>
+        <tr>
+          <td>
+                <code>FileExistsError</code>
+          </td>
+          <td><p>the <code>dest_dir</code> directory already exists</p></td>
+        </tr>
+        <tr>
+          <td>
+                <code>InvalidBranchException</code>
+          </td>
+          <td><p>the <code>branch</code> cannot be cloned.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>True</code>
+          </td>
+          <td><p>True</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>flask_admin_cli/api.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">clone_repo</span><span class="p">(</span><span class="n">branch</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dest_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">True</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Clone the selected repo</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        branch (str): remote branch to clone.</span>
+<span class="sd">        dest_dir (str): directory name inside the project.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        InvalidParamsException: some of the parameters are invalid</span>
+<span class="sd">        FileExistsError: the `dest_dir` directory already exists</span>
+<span class="sd">        InvalidBranchException: the `branch` cannot be cloned.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">branch</span> <span class="ow">in</span> <span class="n">ORIGINAL_EXAMPLES</span><span class="p">:</span>
+        <span class="n">branch</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;app-orig-</span><span class="si">{</span><span class="n">branch</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cross_check</span><span class="p">(</span><span class="n">dest_dir</span><span class="p">,</span> <span class="n">branch</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">NotReadyException</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;git clone </span><span class="si">{</span><span class="n">MAIN_REPO</span><span class="si">}</span><span class="s2">.git -b </span><span class="si">{</span><span class="n">branch</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">dest_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># clone = subprocess.run(</span>
+        <span class="c1">#     [&quot;git&quot;, &quot;clone&quot;, f&quot;{MAIN_REPO}.git&quot;, &quot;-b&quot;, branch, new_dir],</span>
+        <span class="c1">#     check=True,</span>
+        <span class="c1"># )</span>
+        <span class="c1"># subprocess.run([&quot;rm&quot;, &quot;-rf&quot;, f&quot;{new_dir}/.git&quot;])</span>
+        <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="flask_admin_cli.api.cross_check" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">cross_check</span><span class="p">(</span><span class="n">dest_dir</span><span class="p">,</span> <span class="n">branch</span><span class="p">)</span></code>
+
+<a href="#flask_admin_cli.api.cross_check" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Pre-flight checks</p>
+<p>Verifies the environment</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>dest_dir</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>directory name inside the project.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>branch</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>remote branch to clone.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>InvalidParamsException</code>
+          </td>
+          <td><p>some of the parameters are invalid</p></td>
+        </tr>
+        <tr>
+          <td>
+                <code>FileExistsError</code>
+          </td>
+          <td><p>the <code>dest_dir</code> directory already exists</p></td>
+        </tr>
+        <tr>
+          <td>
+                <code>InvalidBranchException</code>
+          </td>
+          <td><p>the <code>branch</code> cannot be cloned.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>flask_admin_cli/api.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">cross_check</span><span class="p">(</span><span class="n">dest_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">branch</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pre-flight checks</span>
+
+<span class="sd">    Verifies the environment</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        dest_dir (str): directory name inside the project.</span>
+<span class="sd">        branch (str): remote branch to clone.</span>
+<span class="sd">    Raises:</span>
+<span class="sd">        InvalidParamsException: some of the parameters are invalid</span>
+<span class="sd">        FileExistsError: the `dest_dir` directory already exists</span>
+<span class="sd">        InvalidBranchException: the `branch` cannot be cloned.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">dest_dir</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">branch</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">InvalidParamsException</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dest_dir</span><span class="si">}</span><span class="s2"> or </span><span class="si">{</span><span class="n">branch</span><span class="si">}</span><span class="s2"> are None.&quot;</span><span class="p">)</span>
+    <span class="c1"># new directory</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">dest_dir</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">FileExistsError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The directory </span><span class="si">{</span><span class="n">dest_dir</span><span class="si">}</span><span class="s2"> already exists.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># branch allowed</span>
+    <span class="k">if</span> <span class="n">branch</span> <span class="ow">in</span> <span class="n">BRANCHES_NOT_ALLOWED</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">InvalidBranchException</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;`</span><span class="si">{</span><span class="n">branch</span><span class="si">}</span><span class="s2">` is not allowed.&quot;</span><span class="p">)</span>
+    <span class="c1"># branch prefix</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">branch</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">BRANCH_PREFIX</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">InvalidBranchException</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;`</span><span class="si">{</span><span class="n">branch</span><span class="si">}</span><span class="s2">` must start with `</span><span class="si">{</span><span class="n">BRANCH_PREFIX</span><span class="si">}</span><span class="s2">`.&quot;</span>
+        <span class="p">)</span>
+    <span class="c1"># branch exists</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+        <span class="p">[</span><span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;ls-remote&quot;</span><span class="p">,</span> <span class="s2">&quot;--exit-code&quot;</span><span class="p">,</span> <span class="s2">&quot;--heads&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">MAIN_REPO</span><span class="si">}</span><span class="s2">.git&quot;</span><span class="p">,</span> <span class="n">branch</span><span class="p">],</span>
+        <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">capture_output</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">DEVNULL</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">status</span><span class="o">.</span><span class="n">returncode</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">RemoteBranchNotFoundException</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;The remote branch </span><span class="si">{</span><span class="n">branch</span><span class="si">}</span><span class="s2"> does not exist.&quot;</span>
+        <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div><h2 id="cli">CLI<a class="headerlink" href="#cli" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+<a id="flask_admin_cli.cli"></a>
+  <div class="doc doc-contents first">
+  
+      <p>CLI Application</p>
+
+<details class="available-commands">
+  <summary>Available Commands</summary>
+  <ul>
+<li>list-original-examples: To get a list of the original examples provided by Flask-Admin  </li>
+<li>list-examples: To get a list of available apps for your project.  </li>
+<li>new_app: creates an app  </li>
+</ul>
+</details>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">flask</span><span class="o">-</span><span class="n">admin</span> <span class="nb">list</span><span class="o">-</span><span class="n">examples</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flask</span><span class="o">-</span><span class="n">admin</span> <span class="nb">list</span><span class="o">-</span><span class="n">original</span><span class="o">-</span><span class="n">examples</span>
+</code></pre></div>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="flask_admin_cli.cli.list_examples" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">list_examples</span><span class="p">()</span></code>
+
+<a href="#flask_admin_cli.cli.list_examples" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Lists all available examples.</p>
+<p>All these examples are made by us.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>flask_admin_cli/cli.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">list_examples</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Lists all available examples.</span>
+
+<span class="sd">    All these examples are made by us.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">example</span> <span class="ow">in</span> <span class="n">api</span><span class="o">.</span><span class="n">AVAILABLE_EXAMPLES</span><span class="p">:</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">secho</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;## </span><span class="si">{</span><span class="n">example</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">secho</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">URL: </span><span class="si">{</span><span class="n">api</span><span class="o">.</span><span class="n">MAIN_REPO</span><span class="si">}</span><span class="s2">/tree/</span><span class="si">{</span><span class="n">example</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">secho</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Installs with &quot;</span><span class="p">,</span> <span class="n">nl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">secho</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;flask-admin new_app --app </span><span class="si">{</span><span class="n">example</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="flask_admin_cli.cli.list_original_examples" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">list_original_examples</span><span class="p">()</span></code>
+
+<a href="#flask_admin_cli.cli.list_original_examples" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Lists all the original examples made by the Flask-Admin team.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>flask_admin_cli/cli.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">list_original_examples</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Lists all the original examples made by the Flask-Admin team.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">example</span> <span class="ow">in</span> <span class="n">api</span><span class="o">.</span><span class="n">ORIGINAL_EXAMPLES</span><span class="p">:</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">secho</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;## </span><span class="si">{</span><span class="n">example</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">secho</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">URL: </span><span class="si">{</span><span class="n">api</span><span class="o">.</span><span class="n">FLASK_ADMIN_REPO</span><span class="si">}</span><span class="s2">/tree/master/examples/</span><span class="si">{</span><span class="n">example</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">secho</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Installs with &quot;</span><span class="p">,</span> <span class="n">nl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">secho</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;flask-admin new_app --app </span><span class="si">{</span><span class="n">example</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="flask_admin_cli.cli.new_app" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">new_app</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">dest_dir</span><span class="p">)</span></code>
+
+<a href="#flask_admin_cli.cli.new_app" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Flask-Admin app as a Flask app</p>
+
+      <details class="quote">
+        <summary>Source code in <code>flask_admin_cli/cli.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--app&quot;</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="s2">&quot;app-factory&quot;</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Application Name.&quot;</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+    <span class="n">show_default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--dest_dir&quot;</span><span class="p">,</span>
+    <span class="n">prompt</span><span class="o">=</span><span class="s2">&quot;Directory&quot;</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Directory to install.&quot;</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">click</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span>
+        <span class="n">file_okay</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">dir_okay</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">resolve_path</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">allow_dash</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">exists</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">show_default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">new_app</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">dest_dir</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flask-Admin app as a Flask app&quot;&quot;&quot;</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">clone_repo</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">dest_dir</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
 
 
 
@@ -353,10 +1036,10 @@ docs/
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tracking", "navigation.top", "header.autohide"], "search": "assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tracking", "navigation.top", "header.autohide"], "search": "assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.5cf534bf.min.js"></script>
+      <script src="assets/javascripts/bundle.ba449ae6.min.js"></script>
       
     
   </body>
