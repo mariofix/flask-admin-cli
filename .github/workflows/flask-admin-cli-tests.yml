@@ -26,5 +26,7 @@ jobs:
         run: poetry install --with dev
       - name: Run Tests
         run: poetry run pytest
+      - name: Run Coverage
+        run: poetry run coverage run -m pytest -rP
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v2
