@@ -1,16 +1,16 @@
-name: Tests
+name: Test & Coverage
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   tests:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
-        poetry-version: ["1.4.2"]
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
+        poetry-version: ["1.5.0"]
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
@@ -24,9 +24,15 @@ jobs:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Install Repo
         run: poetry install --with dev
-      - name: Run Tests
-        run: poetry run pytest
-      - name: Run Coverage
+      - name: Run Tests & Coverage
         run: poetry run coverage run -m pytest -rP
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v2
+      - name: Coverage report (xml)
+        run: poetry run coverage xml
+      - name: Run codacy-coverage-reporter
+        uses: codacy/codacy-coverage-reporter-action@v1
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: "coverage.xml"
+          language: "python"

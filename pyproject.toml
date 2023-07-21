@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "flask-admin-cli"
-version = "0.1.4"
+version = "0.2.0"
 description = "A CLI application to create Flask Admin instances."
 authors = ["Mario Hernandez <mariofix@proton.me>"]
 readme = "README.md"
@@ -9,7 +9,7 @@ license = "MIT"
 homepage = "https://mariofix.github.io/flask-admin-cli/"
 repository = "https://github.com/mariofix/flask-admin-cli"
 documentation = "https://mariofix.github.io/flask-admin-cli/"
-keywords = ["flask-admin", "cli", "python", "console", "click"]
+keywords = ["flask-admin", "cli", "flask"]
 
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -20,7 +20,10 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: System :: Installation/Setup",
     "Topic :: Utilities",
-    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
@@ -33,16 +36,17 @@ generate-setup-file = true
 flask-admin = "flask_admin_cli.cli:the_cli"
 
 [tool.poetry.dependencies]
-python = "^3.7"
-click = "^8.1.3"
+python = "^3.8.5"
+click = "^8.1.6"
 
 
 [tool.poetry.group.dev.dependencies]
-pytest = "*"
-coverage = "*"
-mkdocs = {extras = ["i18n"], version = "*"}
+pytest = "^7.4.0"
+coverage = "^7.2.7"
+mkdocs = {version = "^1.4.3", extras = ["i18n"]}
 mkdocs-material = "^9.0.2"
 mkdocstrings = {extras = ["python"], version = ">=0.19.1,<0.23.0"}
+pre-commit = "^3.3.3"
 
 [build-system]
 requires = ["poetry-core"]
