@@ -1,30 +1,28 @@
-# flask_admin_cli/cli.py
-"""CLI Application
-
-Available Commands:
-    - list-original-examples: To get a list of the original examples provided by Flask-Admin  
-    - list-examples: To get a list of available apps for your project.  
-    - new_app: creates an app  
-
-Examples:
-    >>> flask-admin list-examples
-    >>> flask-admin list-original-examples
-"""
 import click
-from flask_admin_cli import api
+
+from . import api
 
 
 @click.group()
 def the_cli():
+    """
+    Command line interface for managing Flask Admin examples.
+    """
     pass
 
 
 @click.command()
 def list_original_examples():
-    """Lists all the original examples made by the Flask-Admin team."""
+    """
+    List all original Flask Admin examples with their respective URLs and installation commands.
+
+    Usage:
+    python script.py list_original_examples
+    """
     for example in api.ORIGINAL_EXAMPLES:
         click.secho(f"## {example}:", bold=True)
-        click.secho(f"\tURL: {api.FLASK_ADMIN_REPO}/tree/master/examples/{example}")
+        click.secho(
+            f"\tURL: {api.FLASK_ADMIN_REPO}/tree/master/examples/{example}")
         click.secho(f"\tInstalls with ", nl=False)
         click.secho(f"flask-admin new_app --app {example}", bold=True)
         click.echo("")
@@ -32,9 +30,11 @@ def list_original_examples():
 
 @click.command()
 def list_examples():
-    """Lists all available examples.
+    """
+    List all available Flask Admin examples with their respective URLs and installation commands.
 
-    All these examples are made by us.
+    Usage:
+    python script.py list_examples
     """
     for example in api.AVAILABLE_EXAMPLES:
         click.secho(f"## {example}:", bold=True)
@@ -69,7 +69,16 @@ def list_examples():
     show_default=True,
 )
 def new_app(app, dest_dir):
-    """Flask-Admin app as a Flask app"""
+    """
+    Clone a Flask Admin example repository to the specified directory.
+
+    Parameters:
+    app (str): Application Name.
+    dest_dir (str): Directory to install the example.
+
+    Usage:
+    python script.py new_app --app example_name --dest_dir /path/to/destination
+    """
     api.clone_repo(app, dest_dir)
 
 

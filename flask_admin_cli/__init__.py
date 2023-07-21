@@ -1,5 +1,5 @@
-from flask_admin_cli.cli import the_cli as cli
+from .cli import the_cli as cli
 
-__version__ = "0.1.4"
+__version__ = "0.2.0"
 
-__all__ = [__version__, cli]
+__all__ = ["__version__", "cli"]

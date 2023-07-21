@@ -23,6 +23,8 @@ plugins:
 
 nav:
   - index.md
+  - cli.md
+  - api.md
 
 markdown_extensions:
 
@@ -57,4 +59,3 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-

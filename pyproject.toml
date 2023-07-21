@@ -33,7 +33,7 @@ classifiers = [
 generate-setup-file = true
 
 [tool.poetry.scripts]
-flask-admin = "flask_admin_cli.cli:the_cli"
+flask-admin-cli = "flask_admin_cli.cli:the_cli"
 
 [tool.poetry.dependencies]
 python = "^3.8.5"

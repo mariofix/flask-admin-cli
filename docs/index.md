@@ -1,24 +1,55 @@
-# flask admin cli
-A CLI application to create Flask Admin instances.  
+# Flask Admin CLI
+
+## Introduction
+
+Flask Admin CLI is a command-line tool to manage Flask Admin examples. It provides commands to list original and available examples, clone a specific example repository, and perform pre-flight checks.
 
 ## Installation
-```bash
-pip install flask-admin-cli
-```
+
+To install Flask Admin CLI, use pip:
+
+=== "Usando pip"
+    ```shell
+    pip install flask-admin-cli
+    ```
+
+=== "Usando poetry"
+    ```shell
+    poetry add flask-admin-cli
+    ```
 
 ## Usage
-To get a list of examples you can run, and follow the instructions
-```bash
-flask-admin list-examples
+
+### List Original Examples
+
+To list all original Flask Admin examples along with their URLs and installation commands:
+
+```shell
+flask-admin-cli list_original_examples
 ```
 
-To get a list of the original examples you can run, and follow the instructions
-```bash
-flask-admin list-original-examples
+### List Available Examples
+
+To list all available Flask Admin examples along with their URLs and installation commands:
+
+```shell
+flask-admin-cli list_examples
 ```
 
-## API
-::: flask_admin_cli.api
+### Clone Example Repository
 
-## CLI
-::: flask_admin_cli.cli
+To clone a specific Flask Admin example repository to the specified directory:
+
+```shell
+flask-admin-cli new_app --app example_name --dest_dir /path/to/destination
+```
+
+Replace `example_name` with the desired example (e.g., `appengine`, `auth`, `bootstrap4`, etc.) and provide the destination directory for installation.
+
+## Documentation
+
+For more detailed information and documentation, visit the [Flask Admin CLI GitHub repository](https://github.com/mariofix/flask-admin-cli).
+
+## Credits
+
+Special thanks to the Flask Admin team for their fantastic work.

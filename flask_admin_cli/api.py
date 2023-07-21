@@ -1,14 +1,8 @@
-# flask_admin_cli/api.py
-"""
-Main API
-
-This file has the main functions to check and clone remote git repos.
-
-"""
-from pathlib import Path
-from flask_admin_cli import exceptions
 import os
 import subprocess
+from pathlib import Path
+
+from flask_admin_cli import exceptions
 
 MAIN_REPO = "https://github.com/mariofix/flask-admin-cli"
 FLASK_ADMIN_REPO = "https://github.com/flask-admin/flask-admin"
@@ -39,21 +33,23 @@ AVAILABLE_EXAMPLES = ["app-factory", "app-flask-extension"]
 
 
 def cross_check(dest_dir: str, branch: str) -> None:
-    """Pre-flight checks
+    """
+    Perform pre-flight checks before cloning the repository.
 
-    Verifies the environment
+    Parameters:
+    dest_dir (str): The destination directory to install the example.
+    branch (str): The branch to be cloned.
 
-    Args:
-        dest_dir (str): directory name inside the project.
-        branch (str): remote branch to clone.
     Raises:
-        InvalidParamsException: some of the parameters are invalid
-        FileExistsError: the `dest_dir` directory already exists
-        InvalidBranchException: the `branch` cannot be cloned.
+    InvalidParamsException: If either `dest_dir` or `branch` is None.
+    FileExistsError: If the destination directory already exists.
+    InvalidBranchException: If the branch is not allowed or does not start with `app`.
+    RemoteBranchNotFoundException: If the remote branch does not exist.
     """
 
     if not dest_dir or not branch:
-        raise exceptions.InvalidParamsException(f"{dest_dir} or {branch} are None.")
+        raise exceptions.InvalidParamsException(
+            f"{dest_dir} or {branch} are None.")
     # new directory
     if os.path.isdir(dest_dir):
         raise FileExistsError(f"The directory {dest_dir} already exists.")
@@ -68,7 +64,8 @@ def cross_check(dest_dir: str, branch: str) -> None:
         )
     # branch exists
     status = subprocess.run(
-        ["git", "ls-remote", "--exit-code", "--heads", f"{MAIN_REPO}.git", branch],
+        ["git", "ls-remote", "--exit-code",
+            "--heads", f"{MAIN_REPO}.git", branch],
         check=True,
         capture_output=False,
         stdout=subprocess.DEVNULL,
@@ -80,19 +77,18 @@ def cross_check(dest_dir: str, branch: str) -> None:
 
 
 def clone_repo(branch: str = None, dest_dir: str = None) -> True:
-    """Clone the selected repo
+    """
+    Clone the Flask Admin example repository to the specified directory.
 
-    Args:
-        branch (str): remote branch to clone.
-        dest_dir (str): directory name inside the project.
-
-    Raises:
-        InvalidParamsException: some of the parameters are invalid
-        FileExistsError: the `dest_dir` directory already exists
-        InvalidBranchException: the `branch` cannot be cloned.
+    Parameters:
+    branch (str, optional): The branch to be cloned. Defaults to None.
+    dest_dir (str, optional): The destination directory to install the example. Defaults to None.
 
     Returns:
-        True
+    True: If the cloning is successful.
+
+    Raises:
+    NotReadyException: If any pre-flight checks fail.
     """
     if branch in ORIGINAL_EXAMPLES:
         branch = f"app-orig-{branch}"
@@ -103,9 +99,4 @@ def clone_repo(branch: str = None, dest_dir: str = None) -> True:
         raise exceptions.NotReadyException(e)
     else:
         print(f"git clone {MAIN_REPO}.git -b {branch} {dest_dir}")
-        # clone = subprocess.run(
-        #     ["git", "clone", f"{MAIN_REPO}.git", "-b", branch, new_dir],
-        #     check=True,
-        # )
-        # subprocess.run(["rm", "-rf", f"{new_dir}/.git"])
         return True

@@ -1,5 +1,6 @@
 import pytest
 from click.testing import CliRunner
+
 from flask_admin_cli.cli import the_cli
 
 

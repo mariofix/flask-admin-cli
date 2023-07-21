@@ -1,7 +1,9 @@
-import pytest
 import os
-from flask_admin_cli.api import clone_repo, cross_check
 from pathlib import Path
+
+import pytest
+
+from flask_admin_cli.api import clone_repo, cross_check
 
 
 def test_cross_check_fail_dir():
