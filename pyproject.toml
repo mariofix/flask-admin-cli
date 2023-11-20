@@ -45,7 +45,7 @@ pytest = "^7.4.0"
 coverage = "^7.2.7"
 mkdocs = {version = "^1.4.3", extras = ["i18n"]}
 mkdocs-material = "^9.0.2"
-mkdocstrings = {extras = ["python"], version = ">=0.19.1,<0.23.0"}
+mkdocstrings = {extras = ["python"], version = ">=0.19.1,<0.25.0"}
 pre-commit = "^3.3.3"
 
 [build-system]
